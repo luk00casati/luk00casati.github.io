@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="it">
+
+<head>
+  <title>pollo</title>
+  <!-- <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" /> -->
+  <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+
+<body>
+  <div>parola da pollare:</div>
+  <input type="text" id="test-input"/>
+  <button id="submit-button" type="submit" pys-onClick="my_function">RUN</button>
+  <a href="spollo.html">spollo converter</a>
+  <div id="test-output"></div>
+
+<py-script>
+from js import console
+
+def my_function(*args, **kwargs):
+
+    text = Element('test-input').element.value
+    
+    frase=text.lower()
+    valori_ascii, valori_c = [], []
+    for caratteri in frase:
+        valori_ascii.append(ord(caratteri))
+    #print(valori_ascii)
+    for conta in valori_ascii:
+        valori_c.append("POLLO " * conta)
+    #print(valori_c)
+    unione = "  ".join(map(str,valori_c))
+    print(unione)
+
+
+
+
+    Element('test-output').element.innerText = unione
+</py-script>
+
+  </body>
+</html>

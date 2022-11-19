@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="it">
+
+<head>
+  <title>pollo</title>
+  <!-- <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" /> -->
+  <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+
+<body>
+  <div>parola da spollare:</div>
+  <input type="text" id="test-input"/>
+  <button id="submit-button" type="submit" pys-onClick="my_function">RUN</button>
+  <a href="pollo.html">pollo converter</a> <!-- <div>aspettare un attimo</div> -->
+  <div id="test-output"></div>
+
+<py-script>
+from js import console
+
+def my_function(*args, **kwargs):
+
+    text = Element('test-input').element.value
+    
+    frase=text
+    unione = []
+    ind = 0
+    s_frase = frase.split("  ")
+    #print(s_frase)
+    while len(s_frase) > ind:
+        conv = str(s_frase[ind].count("POLLO"))
+        ind += 1
+    #print(conv)
+        unione.append(chr(int(conv)))
+        f_unione = "".join(unione)
+
+    print(f_unione)
+
+
+
+
+    Element('test-output').element.innerText = f_unione
+</py-script>
+
+  </body>
+</html>
